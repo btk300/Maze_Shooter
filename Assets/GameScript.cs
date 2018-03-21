@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameScript : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class GameScript : MonoBehaviour {
 
 		public string getName() { return entityName;}
 		
-		public void setName(int newName) { entityName = newName; }
+		public void setName(string newName) { entityName = newName; }
 
 	}
 
@@ -42,9 +43,6 @@ public class GameScript : MonoBehaviour {
 
 		public void setScore(int newScore) { playerScore = newScore; }
 
-		public override string getName() { return playerName;}
-		
-		public override void setName(int newName) { playerName = newName; } 
 
 	}
 
@@ -57,11 +55,13 @@ public class GameScript : MonoBehaviour {
 
 	}
 
-
+    void setGameScore() { }
 
 	// Use this for initialization
 	void Start () {
 		Debug.Log(gameSpeed);
+        int score = 0;
+        //gameScoreText.text = "Count:" + count.ToString();
 		gameSpeed = 5;
 
 	}
