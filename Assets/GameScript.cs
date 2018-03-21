@@ -60,8 +60,7 @@ public class GameScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Debug.Log(gameSpeed);
-        int score = 0;
-        //gameScoreText.text = "Count:" + count.ToString();
+        
 		gameSpeed = 5;
 
 	}
