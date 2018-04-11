@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-<<<<<<< HEAD
 using UnityEngine.UI;
-=======
->>>>>>> parent of 7dfab68... something
 
 public class GameScript : MonoBehaviour {
 
@@ -16,11 +13,7 @@ public class GameScript : MonoBehaviour {
 
 		public string getName() { return entityName;}
 		
-<<<<<<< HEAD
 		public void setName(string newName) { entityName = newName; }
-=======
-		public void setName(int newName) { entityName = newName; }
->>>>>>> parent of 7dfab68... something
 
 	}
 
@@ -50,12 +43,6 @@ public class GameScript : MonoBehaviour {
 
 		public void setScore(int newScore) { playerScore = newScore; }
 
-<<<<<<< HEAD
-=======
-		public override string getName() { return playerName;}
-		
-		public override void setName(int newName) { playerName = newName; } 
->>>>>>> parent of 7dfab68... something
 
 	}
 
@@ -68,19 +55,12 @@ public class GameScript : MonoBehaviour {
 
 	}
 
-<<<<<<< HEAD
     void setGameScore() { }
-=======
-
->>>>>>> parent of 7dfab68... something
 
 	// Use this for initialization
 	void Start () {
 		Debug.Log(gameSpeed);
-<<<<<<< HEAD
         
-=======
->>>>>>> parent of 7dfab68... something
 		gameSpeed = 5;
 
 	}
