@@ -1,9 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cba5ee4cf4f83124b96f39417323bbc1
 timeCreated: 1523464506
 licenseType: Free
 MonoImporter:
   externalObjects: {}
+=======
+guid: ef5d1cb66d5794d49afc2478f0981cd7
+timeCreated: 1519313327
+licenseType: Free
+MonoImporter:
+>>>>>>> parent of 7dfab68... something
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
