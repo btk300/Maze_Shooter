@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -28,6 +29,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        private int m_playerKeys; // Variable for player score 
+        public Text gameKeysText; // Holds the text needed to cross reference to game U.I. object of same name
+         
+
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -41,6 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        
 
         // Use this for initialization
         private void Start()
@@ -55,6 +61,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            m_playerKeys = 0; //Initialises player score
+            setGameKeyCount();
         }
 
 
@@ -81,6 +90,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            setGameKeyCount();
         }
 
 
@@ -133,6 +144,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.UpdateCursorLock();
         }
 
+        private void setGameKeyCount()
+        {
+            //-----
+            gameKeysText.text = "Key Count: " + m_playerKeys.ToString() + "/5";
+        }
 
         private void PlayJumpSound()
         {
@@ -255,5 +271,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Key"))
+            {
+                other.gameObject.SetActive(false);
+                m_playerKeys += 1;
+            }
+        }
+
     }
 }
