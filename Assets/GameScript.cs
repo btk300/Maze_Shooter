@@ -78,14 +78,9 @@ public class GameScript : MonoBehaviour {
 	void Start () {
 		Debug.Log(gameSpeed);
 <<<<<<< HEAD
-<<<<<<< HEAD
         
 =======
 >>>>>>> parent of 7dfab68... something
-=======
-        int score = 0;
-        //gameScoreText.text = "Count:" + count.ToString();
->>>>>>> parent of b4b2494... UI stuff 2.0
 		gameSpeed = 5;
 
 	}
